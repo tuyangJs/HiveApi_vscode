@@ -1,0 +1,102 @@
+{
+	// Place your AiReply 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"获取蜂巢用户信息": {
+		"prefix":"Hive_users",
+		"body": [
+			"Hive.users((er, data) => {",
+			"if (er) {",
+			"console.log('获取成功', data)",
+			"} else {",
+			"console.log('获取失败', data)",
+			"}",
+			"})"
+		],
+		"description": "获取蜂巢用户信息"
+	},
+	"应用页面隐藏与被显示的事件": {
+		"prefix": "Hiveipc.ShowofHide",
+		"body": [
+			"Hiveipc.ShowofHide((err) => {",
+			"if (err) {",
+			"console.log('应用页面被隐藏', err)",
+			"} else {",
+			"console.log('应用页面被显示', err)",
+			"}",
+			"})"
+		],
+		"description": "应用页面隐藏与被显示的事件"
+	},
+	"引入内置模块": {
+		"prefix":"Hive_NodeMod",
+		"body": [
+			"//示例",
+			"//const request = Hive.NodeMod(request)",
+			"Hive.NodeMod()"
+		],
+		"description": "引入内置模块"
+	},
+	"应用就绪时": {
+		"prefix": "Hiveipc.AppReady",
+		"body": [
+			"Hiveipc.AppReady(err=>{",
+			"console.log('页面已就绪')",
+			"})"
+		],
+		"description": "应用就绪时"
+	},
+	"Emoji选择器": {
+		"prefix":"Hive_EmojiBox",
+		"body": [
+			"Hive.EmojiBox.Open()",
+		],
+		"description": "Emoji选择器"
+	},
+	"在页面发出通知-信息": {
+		"prefix":"Hive_msg.info",
+		"body": [
+			"Hive.msg.info()",
+		],
+		"description": "在页面发出通知-信息"
+	},
+	"在页面发出通知-警告": {
+		"prefix":"Hive_msg.warning",
+		"body": [
+			"Hive.msg.warning()",
+		],
+		"description": "在页面发出通知-警告"
+	},
+	"在页面发出通知-错误": {
+		"prefix":"Hive_msg.error",
+		"body": [
+			"Hive.msg.error()",
+		],
+		"description": "在页面发出通知-错误"
+	},
+	"在页面发出通知-成功": {
+		"prefix":"Hive_msg.success",
+		"body": [
+			"Hive.msg.success()",
+		],
+		"description": "在页面发出通知-成功"
+	},
+	"在页面发出通知-加载": {
+		"prefix":"Hive_msg.loading",
+		"body": [
+			"Hive.msg.loading()",
+		],
+		"description": "在页面发出通知-加载"
+	},
+	"弹出系统对话框": {
+		"prefix":"Hive_dialog.showOpenDialog",
+		"body": [
+			"Hive.dialog.showOpenDialog()",
+		],
+		"description": "弹出系统对话框"
+	},
+}

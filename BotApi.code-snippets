@@ -1,0 +1,669 @@
+{
+	// Place your AiReply 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"获取机器人信息:昵称、头像、botid": {
+		"prefix":"Hive_Botlid",
+		"body": [
+			"Hive.Botlid((err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "获取机器人信息:昵称、头像、botid"
+	},
+	"获取频道成员列表": {
+		"prefix":"Hive_guildMembers",
+		"body": [
+			"Hive.guildMembers({",
+			"source: {",
+			"//频道id",
+			"Gid: '123',",
+			"},",
+			"//上次回包的最后一个人id,默认为0",
+			"after: '132',",
+			"//获取条数",
+			"limit: 20",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "获取频道成员列表"
+	},
+	"获取频道成员详情": {
+		"prefix":"Hive_guildMember",
+		"body": [
+			"Hive.guildMember({",
+			"source: {",
+			"//频道id",
+			"Gid: '123',",
+			"//用户id",
+			"uid: '123'",
+			"},",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "获取频道成员详情"
+	},
+	"删除频道成员": {
+		"prefix":"Hive_deleteGuildMember",
+		"body": [
+			"Hive.deleteGuildMember({",
+			"source: {",
+			"//频道id",
+			"Gid: '123',",
+			"//用户id",
+			"uid: '123'",
+			"},",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "删除频道成员"
+	},
+	"获取频道详情": {
+		"prefix":"Hive_Guilint",
+		"body": [
+			"Hive.Guilint(data.source.Gid, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "获取频道详情"
+	},
+	"获取子频道列表": {
+		"prefix":"Hive_channels",
+		"body": [
+			"Hive.channels({",
+			"//频道id 必填",
+			"Gid: '123'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "获取子频道列表"
+	},
+	"获取子频道详情": {
+		"prefix":"Hive_channels",
+		"body": [
+			"Hive.channels({",
+			"//频道id 必填",
+			"Gid: '123'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "获取子频道详情"
+	},
+	"创建子频道": {
+		"prefix":"Hive_postChannel",
+		"body": [
+			"Hive.postChannel({",
+			"source: {",
+			"//频道id",
+			"Gid: '123'",
+			"},",
+			"//子频道名字",
+			"name: '子频道名',",
+			"//子频道类型",
+			"type: 0,",
+			"//子频道子类型",
+			"stype: 0,",
+			"//子频道排序",
+			"position: 1,",
+			"//子频道所属分组id",
+			"pid: '132',",
+			"//创建人id",
+			"oid: '123',",
+			"//子频道私密类型",
+			"ptype: 0,",
+			"//子频道私密类型成员id",
+			"pids: ['id1', 'id2'],",
+			"//子频道发言权限",
+			"spermission: 0,",
+			"//应用类型子频道应用 AppID,仅应用子频道需要该字段(选填)",
+			"aid: '123'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "创建子频道"
+	},
+	"修改子频道": {
+		"prefix":"Hive_patchChannel",
+		"body": [
+			"Hive.patchChannel({",
+			"source: {",
+			"//子频道id",
+			"cGid: '123'",
+			"},",
+			"//子频道名字",
+			"name: '子频道名',",
+			"//子频道排序",
+			"position: 1,",
+			"//子频道所属分组id",
+			"pid: '132',",
+			"//子频道私密类型",
+			"ptype: 0,",
+			"//子频道私密类型成员id",
+			"spermission: 0,",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "修改子频道"
+	},
+	"删除子频道": {
+		"prefix":"Hive_deleteChannel",
+		"body": [
+			"Hive.deleteChannel({",
+			"source: {",
+			"//子频道id",
+			"cGid: '123'",
+			"},",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "删除子频道"
+	},
+	"获取频道身份组列表": {
+		"prefix":"Hive_roles",
+		"body": [
+			"Hive.roles({",
+			"source: {",
+			"//频道id",
+			"Gid: '123'",
+			"},",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "获取频道身份组列表"
+	},
+	"创建频道身份组": {
+		"prefix":"Hive_postRole",
+		"body": [
+			"Hive.postRole({",
+			"source: {",
+			"//频道id",
+			"Gid: '123'",
+			"},",
+			"//身份组名称",
+			"name: '名称',",
+			"//ARGB 的 HEX 十六进制颜色值转换后的十进制数值",
+			"color: 4294927682,",
+			"//在成员列表中单独展示: 0-否, 1-是",
+			"hoist: 0",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "创建频道身份组"
+	},
+	"修改频道身份组": {
+		"prefix":"Hive_patchRole",
+		"body": [
+			"Hive.patchRole({",
+			"source: {",
+			"//频道id",
+			"Gid: '123'",
+			"},",
+			"//身份组名称",
+			"name: '名称',",
+			"//ARGB 的 HEX 十六进制颜色值转换后的十进制数值",
+			"color: 4294927682,",
+			"//在成员列表中单独展示: 0-否, 1-是",
+			"hoist: 0",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "修改频道身份组"
+	},
+	"删除频道身份组": {
+		"prefix":"Hive_deleteRole",
+		"body": [
+			"Hive.deleteRole({",
+			"source: {",
+			"//频道id",
+			"Gid: '123'",
+			"},",
+			"//频道身份组id",
+			"id: '1'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "删除频道身份组"
+	},
+	"创建频道身份组成员": {
+		"prefix":"Hive_memberAddRole",
+		"body": [
+			"Hive.memberAddRole({",
+			"source: {",
+			"//频道id",
+			"Gid: '123',",
+			"},",
+			"//频道身份组id",
+			"id: '1',",
+			"//用户id",
+			"uid: '123',",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "创建频道身份组成员"
+	},
+	"删除频道身份组成员": {
+		"prefix":"Hive_memberDeleteRole",
+		"body": [
+			"Hive.memberDeleteRole({",
+			"source: {",
+			"//频道id",
+			"Gid: '123'",
+			"},",
+			"//频道身份组id",
+			"id: '1',",
+			"//用户id",
+			"uid: '123'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "删除频道身份组成员"
+	},
+	"回复频道消息": {
+		"prefix":"Hive_NewGmsg",
+		"body": [
+			"Hiveipc.NewGmsg((data) => {",
+			"const channel = {",
+			"msg: '你好啊',",
+			"source: data.source",
+			"}",
+			"Hive.NewCmsg(channel, (er, data) => {",
+			"if (er) {",
+			"console.log('消息发送成功', data)",
+			"//一般发送失败应该是没有权限导致",
+			"} else {",
+			"console.log('消息发送失败', data)",
+			"}",
+			"})",
+			"})"
+		],
+		"description": "发送频道消息"
+	},
+	"主动发送消息": {
+		"prefix":"Hive_NewCmsg",
+		"body": [
+			"Hive.NewCmsg(channel, (er) = > {",
+			"if (er) {",
+			"console.log('消息发送成功', er)",
+			"} else {",
+			"console.log('消息发送失败')",
+			"}",
+			"})"
+		],
+		"description": "主动发送消息"
+	},
+	"创建私聊对话": {
+		"prefix":"Hive_NewDms",
+		"body": [
+			"cosnt channel = {",
+			"source: {",
+			"uid: 1100086,",
+			"Gid: 588888",
+			"}",
+			"}",
+			"Hive.NewDms(channel, (er) => {",
+			"if (er) {",
+			"console.log('创建成功！', er)",
+			"} else {",
+			"console.log('创建失败！')",
+			"}",
+			"})"
+		],
+		"description": "创建私聊对话"
+	},
+	"发送私信消息": {
+		"prefix":"Hive_NewDms",
+		"body": [
+			"Hive.NewDms({",
+			"source:{",
+			"//频道id",
+			"Gid: '21534',",
+			"//要发送消息的用户id",
+			"uid: '564'",
+			"}",
+			"}, (err, data) = > {",
+			"if (err) {",
+			"console.log('创建成功', data)",
+			"//发送消息",
+			"Hive.NewDmsg({",
+			"source:data.source,",
+			"msg: '你好啊'",
+			"}, (err, data) = > {",
+			"if (err) {",
+			"console.log('发送成功', data)",
+			"} else {",
+			"console.log('发送失败', data)",
+			"}",
+			"})",
+			"} else {",
+			"console.log('创建失败', data)",
+			"}",
+			"})"
+		],
+		"description": "发送私信消息"
+	},
+	"禁言全体": {
+		"prefix":"Hive_muteAll",
+		"body": [
+			"Hive.muteAll({",
+			"source: {",
+			"//频道id 必填",
+			"Gid: '123'",
+			"},",
+			"//截止时间戳",
+			"times: '123',",
+			"//禁言多少秒",
+			"mutes: '123',",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "禁言全体"
+	},
+	"禁言指定用户": {
+		"prefix":"Hive_muteMember",
+		"body": [
+			"Hive.muteMember({",
+			"source: {",
+			"//频道id 必填",
+			"Gid: '123',",
+			"//用户id 必填",
+			"uid: '123'",
+			"},",
+			"//截止时间戳",
+			"times: '123',",
+			"//禁言多少秒",
+			"mutes: '123'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "禁言指定用户"
+	},
+	"禁言指定批量用户": {
+		"prefix":"Hive_muteMembers",
+		"body": [
+			"Hive.muteMembers({",
+			"source: {",
+			"//频道id 必填",
+			"Gid: '123',",
+			"//用户id 必填",
+			"uids:['id1', 'id2']",
+			"},",
+			"//截止时间戳",
+			"times: '123',",
+			"//禁言多少秒",
+			"mutes: '123'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "禁言指定批量用户"
+	},
+	"创建频道公告": {
+		"prefix":"Hive_postGuildAnnounce",
+		"body": [
+			"Hive.postGuildAnnounce({",
+			"source: {",
+			"//子频道id",
+			"cGid: '123',",
+			"//选填，消息 id,有值则优选将某条消息设置为成员公告",
+			"mid: '123'",
+			"},",
+			"//选填，公告类别 0:成员公告,1:欢迎公告，默认为成员公告",
+			"tpye: 0,",
+			"//选填，推荐子频道列表，会一次全部替换推荐子频道列表",
+			"channels: ['123', '321']",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "创建频道公告"
+	},
+	"删除频道公告": {
+		"prefix":"Hive_deleteGuildAnnounce",
+		"body": [
+			"Hive.deleteGuildAnnounce({",
+			"source: {",
+			"//频道id",
+			"Gid: '123',",
+			"//必填,消息id,用于删除指定公告",
+			"mid: '123'",
+			"},",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "删除频道公告"
+	},
+	"获取精华信息": {
+		"prefix":"Hive_pinsMessage",
+		"body": [
+			"Hive.pinsMessage({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123',",
+			"//消息id 必填",
+			"mid: '123',",
+			"//频道id必填",
+			"Gid: '132'",
+			"},",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "获取精华信息"
+	},
+	"创建精华信息": {
+		"prefix":"Hive_putPinsMessage",
+		"body": [
+			"Hive.putPinsMessage({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123',",
+			"//消息id 必填",
+			"mid: '123',",
+			"//频道id必填",
+			"Gid: '132'",
+			"},",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "创建精华信息"
+	},
+	"删除精华信息": {
+		"prefix":"Hive_deletePinsMessage",
+		"body": [
+			"Hive.deletePinsMessage({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123',",
+			"//消息id 必填",
+			"mid: '123',",
+			"//频道id 必填",
+			"Gid: '132'",
+			"},",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "删除精华信息"
+	},
+	"获取频道日程列表": {
+		"prefix":"Hive_schedules",
+		"body": [
+			"Hive.schedules({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123'",
+			"},",
+			"since: 123",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "获取频道日程列表"
+	},
+	"获取日程详情": {
+		"prefix":"Hive_schedule",
+		"body": [
+			"Hive.schedule({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123',",
+			"//日程id 必填",
+			"},",
+			"sid: '123'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "获取日程详情"
+	},
+	"创建日程": {
+		"prefix":"Hive_postSchedule",
+		"body": [
+			"Hive.postSchedule({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123'",
+			"},",
+			"//日程名称",
+			"name: '日程名称',",
+			"//日程描述",
+			"description: '日程描述',",
+			"//日程开始时间戳",
+			"stimes: '1231',",
+			"//日程结束时间戳",
+			"etimes: '3211',",
+			"//日程类型",
+			"type: '0'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "创建日程"
+	},
+	"修改日程": {
+		"prefix":"Hive_patchSchedule",
+		"body": [
+			"Hive.patchSchedule({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123'",
+			"},",
+			"//日程名称",
+			"name: '日程名称',",
+			"//日程描述",
+			"description: '日程描述',",
+			"//日程开始时间戳",
+			"stimes: '1231',",
+			"//日程结束时间戳",
+			"etimes: '3211',",
+			"//日程类型",
+			"type: '0'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "修改日程"
+	},
+	"删除日程": {
+		"prefix":"Hive_deleteSchedule",
+		"body": [
+			"Hive.deleteSchedule({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123'",
+			"},",
+			"//日程id",
+			"sid: '123'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "删除日程"
+	},
+	"发表表情表态": {
+		"prefix":"Hive_postReaction",
+		"body": [
+			"Hive.postReaction({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123',",
+			"//消息id 必填",
+			"mid: '123'",
+			"},",
+			"//表情类型",
+			"type: 123,",
+			"//表情id",
+			"id: '123'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "发表表情表态"
+	},
+	"删除表情表态": {
+		"prefix":"Hive_deleteReaction",
+		"body": [
+			"Hive.deleteReaction({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123',",
+			"//消息id 必填",
+			"mid: '123'",
+			"},",
+			"//表情类型",
+			"type: 123,",
+			"//表情id",
+			"id: '123'",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})"
+		],
+		"description": "删除表情表态"
+	},
+	"拉取表情表态用户列表": {
+		"prefix":"Hive_getReactionUserList",
+		"body": [
+			"Hive.getReactionUserList({",
+			"source: {",
+			"//子频道id 必填",
+			"cGid: '123',",
+			"//消息id 必填",
+			"mid: '123'",
+			"},",
+			"//表情类型",
+			"type: 123,",
+			"//表情id",
+			"id: '123',",
+			"//上次拉取返回好cookie,第一次拉取无需填写",
+			"cookie: '123',",
+			"//一次请求的拉取数量",
+			"limit: 123",
+			"}, (err, data) => {",
+			"console.log(err, data)",
+			"})",
+		],
+		"description": "拉取表情表态用户列表"
+	},
+}
