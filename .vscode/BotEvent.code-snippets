@@ -128,7 +128,7 @@
 		"body": [
 			"Hiveipc.BotDel_g((data) => {",
 			"console.log('机器人退出频道',data)",
-			"}",
+			"})",
 		],
 		"description": "机器人退出频道"
 	},
